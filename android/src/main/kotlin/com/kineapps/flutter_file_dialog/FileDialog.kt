@@ -85,13 +85,7 @@ class FileDialog(
         this.copyPickedFileToCacheDir = copyFileToCacheDir
 
         val intent = Intent(Intent.ACTION_PICK)
-        intent.putExtra("crop", "true")
-        intent.putExtra("scale", true)
-        intent.putExtra("outputX", 256)
-        intent.putExtra("outputY", 256)
-        intent.putExtra("aspectX", 1)
-        intent.putExtra("aspectY", 1)
-        intent.putExtra("return-data", true)
+        intent.setType("image/*")
         if (localOnly) {
             intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true)
         }
